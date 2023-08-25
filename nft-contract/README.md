@@ -131,18 +131,18 @@ Save reference data(text) to centralized db or on-chain
 #### NFT CONTRACT
 
 
-export NFT_CONTRACT_ID=nft-contract-test1.hdtung.testnet
-export NFT_MARKETPLACE_ID=nft-market-test.hdtung.testnet
-export MAIN_ACCOUNT=hdtung.testnet
+export NFT_CONTRACT_ID=nft-contract-test1.tommythuy2023.testnet
+export NFT_MARKETPLACE_ID=nft-market-test.tommythuy2023.testnet
+export MAIN_ACCOUNT=tommythuy2023.testnet
 export MAIN_ACCOUNT_2=stack2829.testnet
-export BUYER_1=buyer1.hdtung.testnet
-export BUYER_2=buyer2.hdtung.testnet
+export BUYER_1=buyer1.tommythuy2023.testnet
+export BUYER_2=buyer2.tommythuy2023.testnet
 
 ## delete
-near delete $NFT_CONTRACT_ID hdtung.testnet	
+near delete $NFT_CONTRACT_ID tommythuy2023.testnet	
 
-near create-account $NFT_CONTRACT_ID —masterAccount hdtung.testnet --initialBalance 10
-near create-account $NFT_MARKETPLACE_ID —masterAccount hdtung.testnet --initialBalance 10
+near create-account $NFT_CONTRACT_ID —masterAccount tommythuy2023.testnet --initialBalance 10
+near create-account $NFT_MARKETPLACE_ID —masterAccount tommythuy2023.testnet --initialBalance 10
 
 ###deploy nft contract 
 near deploy --accountId $NFT_CONTRACT_ID --wasmFile out/main.wasm
@@ -165,7 +165,7 @@ near call $NFT_CONTRACT_ID nft_transfer '{"receiver_id" : "'$MAIN_ACCOUNT_2'", "
 
 ####￼ MARKETPLACE CONTRACT
 
-export NFT_MARKETPLACE_ID=nft-marketplace.hdtung.testnet
+export NFT_MARKETPLACE_ID=nft-marketplace.tommythuy2023.testnet
 
 #￼# # deploy nft marketplace contract 
 near deploy --accountId $NFT_MARKETPLACE_ID --wasmFile out/market.wasm
@@ -180,17 +180,17 @@ near call $NFT_CONTRACT_ID storage_deposit '{"account_id":"'$MAIN_ACCOUNT'"}' --
 near call $NFT_CONTRACT_ID nft_approve '{"token_id": "token-2", "account_id" : "'$NFT_MARKETPLACE_ID'", "msg" : "{ \"sale_conditions\" : \"300000000000000000000000\" }"}' --accountId $MAIN_ACCOUNT --deposit 0.01
 
 ### view sale object from token-id
-near view $NFT_MARKETPLACE_ID get_sale '{"nft_contract_token":"nft-contract.hdtung.testnet.token-2"}'
+near view $NFT_MARKETPLACE_ID get_sale '{"nft_contract_token":"nft-contract.tommythuy2023.testnet.token-2"}'
 
 ### view sales object from accountId 
 near view $NFT_MARKETPLACE_ID get_sales_by_owner_id '{"account_id":"'$MAIN_ACCOUNT'", "from_index":"0", "limit" : '3'}'
 
 ###  buy
-near call $NFT_MARKETPLACE_ID offer '{"nft_contract_id":"'$NFT_CONTRACT_ID'", "token_id" : "token-1”}’ --accountId buyer1.hdtung.testnet --deposit 0.3 --gas 300000000000000
+near call $NFT_MARKETPLACE_ID offer '{"nft_contract_id":"'$NFT_CONTRACT_ID'", "token_id" : "token-1”}’ --accountId buyer1.tommythuy2023.testnet --deposit 0.3 --gas 300000000000000
 
 
 ### update-sell-price
-near call nft-marketplace.hdtung.testnet update_price '{"nft_contract_id" : "nft-contract.hdtung.testnet", "token_id" : "token-1", "price" : "300000000000000000000000" }' --accountId $MAIN_ACCOUNT --depositYocto 1
+near call nft-marketplace.tommythuy2023.testnet update_price '{"nft_contract_id" : "nft-contract.tommythuy2023.testnet", "token_id" : "token-1", "price" : "300000000000000000000000" }' --accountId $MAIN_ACCOUNT --depositYocto 1
 
 
 ### bid token
@@ -220,3 +220,5 @@ near call $NFT_MARKETPLACE_ID accept_bid_rent '{"token_id" : "19330605", "bid_id
 
 ### view rented by token id 
 near view $NFT_MARKETPLACE_ID get_rent_by_token_id '{"token_id" : "19330605"}' --accountId $MAIN_ACCOUNT
+
+

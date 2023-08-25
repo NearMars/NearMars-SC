@@ -47,7 +47,7 @@ near view $NFT_MARKETPLACE_ID get_sales_by_nft_contract_id '{"nft_contract_id" :
 
 ### Buy selling NFT
 ```=bash
-near call $NFT_MARKETPLACE_ID offer '{"nft_contract_id":"'$NFT_CONTRACT_ID'", "20220816" : "20230101”}’ --accountId buyer1.hdtung.testnet --deposit 0.3 --gas 300000000000000
+near call $NFT_MARKETPLACE_ID offer '{"nft_contract_id":"'$NFT_CONTRACT_ID'", "20220816" : "20230101”}’ --accountId buyer1.tommythuy2023.testnet --deposit 0.3 --gas 300000000000000
 ```
 ### Cancel selling NFT
 ```=bash

@@ -17,11 +17,3 @@ source $HOME/.cargo/env
 
 # Add the wasm toolchain
 rustup target add wasm32-unknown-unknown
-
-NFT-CONTRACT
-https://explorer.testnet.near.org/transactions/HZcTxSQqhRphS7N8UsCDEQbMeKysMKYxnho6KW4BLoJD
-
-
-
-NFT-MARKET
-https://explorer.testnet.near.org/transactions/25s8WV9PdXiN4C3WdYa1TRwyWwFdAMx6TtnByEDtJdFw
